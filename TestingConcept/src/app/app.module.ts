@@ -3,16 +3,20 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { DetailViewComponent } from './detail-view/detail-view.component';
-import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
+import { DynamicFormControlComponent } from './dynamic-form-control/dynamic-form-control.component';
+import { DynamicFormComponent } from './dynamic-form/dynamic-form.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    DetailViewComponent 
+    DetailViewComponent,
+    DynamicFormControlComponent,
+    DynamicFormComponent
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

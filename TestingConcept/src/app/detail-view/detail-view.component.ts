@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import {FormBuilder} from './form-builder';
 import { DomSanitizer, SafeUrl, SafeHtml } from '@angular/platform-browser';
 import { FormControl, FormGroup } from '@angular/forms';
-import { formatPercent, JsonPipe } from '@angular/common';
 
 @Component({
   selector: 'app-detail-view',
@@ -11,7 +10,7 @@ import { formatPercent, JsonPipe } from '@angular/common';
 })
 export class DetailViewComponent implements OnInit {
 
-testForm : FormGroup;
+  testForm : FormGroup;
 
   json = [
     {
@@ -30,21 +29,19 @@ testForm : FormGroup;
 },
 ]
 
-
-
   result: SafeHtml;
   constructor(private sanitizer: DomSanitizer) { }
 
   ngOnInit(): void {
     let result = new FormBuilder().getTemplateForm(JSON.stringify(this.json));
     this.result = this.sanitizer.bypassSecurityTrustHtml(result);
-   
+
     let controls = {};
 
     this.json.forEach(element => {
       controls[element.DATA_FIELD] = new FormControl();
     });
-    
+
     this.testForm = new FormGroup(controls);
 
   }
