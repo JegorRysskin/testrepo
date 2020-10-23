@@ -3,6 +3,7 @@ import { ControlDropdown } from './../classes/control-dropdown';
 import { ControlBase } from './../classes/control-base';
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
+import json from '../../assets/dummyData.json';
 
 @Injectable({
   providedIn: 'root'
@@ -12,7 +13,26 @@ export class ControlService {
   constructor() { }
 
   getControls(): Observable<ControlBase<string>[]>{
-    const controls: ControlBase<string>[] = [
+
+    const controls: ControlBase<string>[] = [];
+
+    json.data.forEach(e => {
+        switch(e.FIELD_TYPE) {
+          case 'TextBox':
+            let label = e.DATA_FIELD.toLowerCase().replace(/\_/gi, ' ');
+
+            controls[controls.length] = new ControlTextbox({
+                key: e.ID,
+                label: label.charAt(0).toUpperCase() + label.substring(1)
+            });
+
+            break;
+
+          default:
+            console.log(e.FIELD_TYPE);
+        }
+    });
+      /*
       new ControlDropdown({
         key: 'brave',
         label: 'Bravery Rating',
@@ -42,6 +62,7 @@ export class ControlService {
       }),
 
     ];
+    */
 
     return of(controls.sort((a, b) => a.order - b.order));
   }
