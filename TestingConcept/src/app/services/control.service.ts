@@ -29,7 +29,7 @@ export class ControlService {
         key: 'firstName',
         label: 'First Name',
         value: 'Bombasta',
-        required: true,
+        data_required: true,
         order: 1
       }),
 
@@ -38,7 +38,7 @@ export class ControlService {
         label: 'Email',
         type: 'email',
         order: 2,
-        required: true
+        data_required: true
       }),
 
     ];
