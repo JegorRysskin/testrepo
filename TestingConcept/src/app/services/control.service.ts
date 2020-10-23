@@ -19,11 +19,12 @@ export class ControlService {
     json.data.forEach(e => {
         switch(e.FIELD_TYPE) {
           case 'TextBox':
-            let label = e.DATA_FIELD.toLowerCase().replace(/\_/gi, ' ');
+            const label = e.DATA_FIELD.toLowerCase().replace(/\_/gi, ' ');
 
             controls[controls.length] = new ControlTextbox({
                 key: e.ID,
-                label: label.charAt(0).toUpperCase() + label.substring(1)
+                label: label.charAt(0).toUpperCase() + label.substring(1),
+                data_required: e.
             });
 
             break;
