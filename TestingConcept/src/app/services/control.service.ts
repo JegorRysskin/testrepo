@@ -24,7 +24,7 @@ export class ControlService {
             controls[controls.length] = new ControlTextbox({
                 key: e.ID,
                 label: label.charAt(0).toUpperCase() + label.substring(1),
-                data_required: e.
+                data_required: Number(e.DATA_REQUIRED) === 1
             });
 
             break;
