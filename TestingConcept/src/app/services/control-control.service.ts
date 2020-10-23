@@ -13,7 +13,7 @@ export class ControlControlService {
     const group: any = {};
 
     controls.forEach(control => {
-      group[control.key] = control.required ? new FormControl(control.value || '', Validators.required) : new FormControl(control.value || '');
+      group[control.key] = control.data_required ? new FormControl(control.value || '', Validators.required) : new FormControl(control.value || '');
     });
     return new FormGroup(group);
   }

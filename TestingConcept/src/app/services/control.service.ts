@@ -24,6 +24,7 @@ export class ControlService {
         ],
         order: 3
       }),
+
       new ControlTextbox({
         key: 'firstName',
         label: 'First Name',
@@ -31,6 +32,7 @@ export class ControlService {
         required: true,
         order: 1
       }),
+
       new ControlTextbox({
         key: 'emailAddress',
         label: 'Email',
