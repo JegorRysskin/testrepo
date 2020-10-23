@@ -1,11 +1,49 @@
 {
   "version": 3,
   "targets": {
-    ".NETCoreApp,Version=v3.1": {}
+    ".NETCoreApp,Version=v3.1": {
+      "web-api.Business/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v3.1",
+        "dependencies": {
+          "web-api.Data": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/web-api.Business.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/web-api.Business.dll": {}
+        }
+      },
+      "web-api.Data/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v3.1",
+        "compile": {
+          "bin/placeholder/web-api.Data.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/web-api.Data.dll": {}
+        }
+      }
+    }
   },
-  "libraries": {},
+  "libraries": {
+    "web-api.Business/1.0.0": {
+      "type": "project",
+      "path": "../web-api.Business/web-api.Business.csproj",
+      "msbuildProject": "../web-api.Business/web-api.Business.csproj"
+    },
+    "web-api.Data/1.0.0": {
+      "type": "project",
+      "path": "../web-api.Data/web-api.Data.csproj",
+      "msbuildProject": "../web-api.Data/web-api.Data.csproj"
+    }
+  },
   "projectFileDependencyGroups": {
-    ".NETCoreApp,Version=v3.1": []
+    ".NETCoreApp,Version=v3.1": [
+      "web-api.Business >= 1.0.0",
+      "web-api.Data >= 1.0.0"
+    ]
   },
   "packageFolders": {
     "C:\\Users\\11800267\\.nuget\\packages\\": {},
@@ -15,9 +53,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\11800267\\source\\repos\\aarixa\\web-api\\web-api\\web-api.api.csproj",
-      "projectName": "web-api.api",
-      "projectPath": "C:\\Users\\11800267\\source\\repos\\aarixa\\web-api\\web-api\\web-api.api.csproj",
+      "projectUniqueName": "C:\\Users\\11800267\\source\\repos\\aarixa\\web-api\\web-api\\web-api.Api.csproj",
+      "projectName": "web-api.Api",
+      "projectPath": "C:\\Users\\11800267\\source\\repos\\aarixa\\web-api\\web-api\\web-api.Api.csproj",
       "packagesPath": "C:\\Users\\11800267\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\11800267\\source\\repos\\aarixa\\web-api\\web-api\\obj\\",
       "projectStyle": "PackageReference",
@@ -39,7 +77,14 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\11800267\\source\\repos\\aarixa\\web-api\\web-api.Business\\web-api.Business.csproj": {
+              "projectPath": "C:\\Users\\11800267\\source\\repos\\aarixa\\web-api\\web-api.Business\\web-api.Business.csproj"
+            },
+            "C:\\Users\\11800267\\source\\repos\\aarixa\\web-api\\web-api.Data\\web-api.Data.csproj": {
+              "projectPath": "C:\\Users\\11800267\\source\\repos\\aarixa\\web-api\\web-api.Data\\web-api.Data.csproj"
+            }
+          }
         }
       },
       "warningProperties": {
