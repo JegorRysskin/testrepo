@@ -6,6 +6,7 @@ import { DetailViewComponent } from './detail-view/detail-view.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { DynamicFormControlComponent } from './dynamic-form-control/dynamic-form-control.component';
 import { DynamicFormComponent } from './dynamic-form/dynamic-form.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { DynamicFormComponent } from './dynamic-form/dynamic-form.component';
   ],
   imports: [
     BrowserModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
